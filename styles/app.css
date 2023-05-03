@@ -210,12 +210,13 @@ button {
   color: var(--purple-light-1);
 }
 
-#la {
+.la {
   background-color: #f5f5f5;
   font-size: 16px;
   border-radius: 4px;
   display: block; /* or inline-block */
   margin-left: auto;
+  margin-bottom: 3rem;
 }
 
 .header-searchForm {

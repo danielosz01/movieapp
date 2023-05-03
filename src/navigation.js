@@ -54,6 +54,7 @@ function homePage() {
   headerSection.style.background = '';
   arrowBtn.classList.add('inactive');
   arrowBtn.classList.remove('header-arrow--white');
+  laSelect.classList.remove('inactive');
   headerTitle.classList.remove('inactive');
   headerCategoryTitle.classList.add('inactive');
   searchForm.classList.remove('inactive');
@@ -77,6 +78,7 @@ function categoriesPage() {
   headerSection.style.background = '';
   arrowBtn.classList.remove('inactive');
   arrowBtn.classList.remove('header-arrow--white');
+  laSelect.classList.add('inactive');
   headerTitle.classList.add('inactive');
   headerCategoryTitle.classList.remove('inactive');
   searchForm.classList.add('inactive');
@@ -105,6 +107,7 @@ function movieDetailsPage() {
   // headerSection.style.background = '';
   arrowBtn.classList.remove('inactive');
   arrowBtn.classList.add('header-arrow--white');
+  laSelect.classList.add('inactive');
   headerTitle.classList.add('inactive');
   headerCategoryTitle.classList.add('inactive');
   searchForm.classList.add('inactive');
@@ -114,6 +117,12 @@ function movieDetailsPage() {
   likedMoviesSection.classList.add('inactive');
   genericSection.classList.add('inactive');
   movieDetailSection.classList.remove('inactive');
+
+  if (lang == 'en') {
+    relatedMoviesTitle.textContent = 'Similar movies';
+  } else if (lang == 'es') {
+    relatedMoviesTitle.textContent = 'peliculas similares';
+  }
 
   // ['#movie', '234567']
   const [_, movieId] = location.hash.split('=');
@@ -127,6 +136,7 @@ function searchPage() {
   headerSection.style.background = '';
   arrowBtn.classList.remove('inactive');
   arrowBtn.classList.remove('header-arrow--white');
+  laSelect.classList.add('inactive');
   headerTitle.classList.add('inactive');
   headerCategoryTitle.classList.add('inactive');
   searchForm.classList.remove('inactive');
@@ -145,12 +155,13 @@ function searchPage() {
 }
 
 function trendsPage() {
-  console.log('TRENDS!!');
 
+  console.log('TRENDS!!');
   headerSection.classList.remove('header-container--long');
   headerSection.style.background = '';
   arrowBtn.classList.remove('inactive');
   arrowBtn.classList.remove('header-arrow--white');
+  laSelect.classList.add('inactive');
   headerTitle.classList.add('inactive');
   headerCategoryTitle.classList.remove('inactive');
   searchForm.classList.add('inactive');
@@ -163,6 +174,12 @@ function trendsPage() {
 
   headerCategoryTitle.innerHTML = 'Tendencias';
 
+  if (lang == 'en') {
+    headerCategoryTitle.textContent = 'Trends';
+  } else if (lang == 'es') {
+    headerCategoryTitle.textContent = 'Tendencias';
+  }
+
   getTrendingMovies();
 
   infiniteScroll = getPaginatedTrendingMovies;
@@ -173,18 +190,27 @@ function lanNavigator() {
     case 'en':
       trendingPreviewTitle.textContent = 'Trends'
       trendingPreviewBtn.textContent = 'See more'
+      categoriesPreviewTilte.textContent = 'Categories'
+      likedTitle.textContent = 'Favorite Movies'
+      
       homePage();
       break;
 
     case 'es':
       trendingPreviewTitle.textContent = 'Tendencias'
       trendingPreviewBtn.textContent = 'Ver mas'
+      categoriesPreviewTilte.textContent = 'Categorias'
+      likedTitle.textContent = 'Peliculas favoritas'
+
       homePage();
       break;
 
     case 'fr':
       trendingPreviewTitle.textContent = 'Les Tendances'
       trendingPreviewBtn.textContent = 'Voir Plus'
+      categoriesPreviewTilte.textContent = 'catégories'
+      likedTitle.textContent = 'Films préférés'
+
       homePage();
       break;  
   }

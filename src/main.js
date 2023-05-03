@@ -1,6 +1,6 @@
 // Languaje
 
-let lang = '';
+var lang = '';
 
 // Data
 const api = axios.create({
@@ -10,7 +10,7 @@ const api = axios.create({
   },
   params: {
     'api_key': API_KEY,
-    "language": lang 
+    "language": navigator.language || "es-ES" 
   },
 });
 
@@ -94,6 +94,8 @@ function createMovies(
     movieBtn.addEventListener('click', () => {
       movieBtn.classList.toggle('movie-btn--liked');
       likeMovie(movie);
+      getTrendingMoviesPreview();
+      getLikedMovies();
     });
 
     if (lazyLoad) {

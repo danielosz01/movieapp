@@ -15,7 +15,7 @@ const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollCont
 const likedMoviesListArticle = document.querySelector('.liked-movieList');
 
 // Elements
-const laSelect = document.querySelector('#la');
+const laSelect = document.querySelector('.la');
 const headerTitle = document.querySelector('.header-title');
 const arrowBtn = document.querySelector('.header-arrow');
 const headerCategoryTitle = document.querySelector('.header-title--categoryView');
@@ -32,4 +32,10 @@ const movieDetailScore = document.querySelector('.movieDetail-score');
 // Switch Languaje Elements
 
 const trendingPreviewTitle = document.querySelector('.trendingPreview-title')
+const categoriesPreviewTilte = document.querySelector('.categoriesPreview-title')
+const likedTitle = document.querySelector('.liked-title')
 const trendingPreviewBtn = document.querySelector('.trendingPreview-btn')
+
+relatedMoviesTitle = document.querySelector('.relatedMovies-title')
+
+
